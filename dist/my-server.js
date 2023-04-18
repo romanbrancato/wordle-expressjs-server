@@ -5,8 +5,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
+const cors_1 = __importDefault(require("cors"));
 const app = (0, express_1.default)();
 const PORT = (_a = process.env.PORT) !== null && _a !== void 0 ? _a : 5173; // Allow dynamic PORT setting (Heroku)
+app.use((0, cors_1.default)());
 // Array of 5-letter words
 const words = ["APPLE", "BEACH", "CHAIR", "DANCE", "FLUFF", "CANNY", "SPOON", "DOLLY"];
 // Define GET endpoint to return random word
